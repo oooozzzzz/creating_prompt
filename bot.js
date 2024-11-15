@@ -27,7 +27,7 @@ export const bot = new Bot(token);
 bot.use(hydrateReply);
 
 // Set the default parse mode for ctx.reply.
-bot.api.config.use(parseMode("HTML"));
+// bot.api.config.use(parseMode("HTML"));
 
 const i18n = new I18n({
 	defaultLocale: "ru",
