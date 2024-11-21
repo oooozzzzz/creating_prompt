@@ -1,3 +1,4 @@
+import { startServer } from "./app.js";
 import { amoCRM } from "./axiosClient.js";
 import { bot } from "./bot.js";
 import { memory } from "./chain.js";
@@ -125,4 +126,5 @@ bot.catch((error) => {
 	console.error(error);
 	bot.start();
 });
+startServer()
 bot.start();
