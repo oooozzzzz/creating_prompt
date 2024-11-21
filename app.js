@@ -1,14 +1,19 @@
+import bodyParser from "body-parser";
 import express from "express";
+import { api } from "./api.js";
 const port = 8080;
-export const app = express();
+const app = express();
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
 	res.send("Hello World!");
-	res.send(req.body);
 });
 
-app.post("/", (req, res) => {
-	res.send("Answer " + req.body);
+app.post("/", async (req, res) => {
+	console.log(req.body);
+	const text = JSON.stringify(req.body);
+	await api.sendMessage(762569950, text);
+	res.send("200");
 });
 
 export const startServer = () => {
