@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 
 app.post("/", async (req, res) => {
 	console.log(req.body);
-	const text = JSON.stringify(req.body);
+	const text = req.body;
 	await api.sendMessage(762569950, text);
 	res.send("200");
 });
