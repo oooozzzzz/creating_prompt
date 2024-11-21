@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
 app.post("/", async (req, res) => {
 	console.log(req.body);
 	const text = req.body;
+	console.log(text)
 	await api.sendMessage(762569950, text);
 	res.send("200");
 });
