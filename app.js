@@ -1,6 +1,7 @@
 import bodyParser from "body-parser";
 import express from "express";
 import { api } from "./api.js";
+import { handleMessage } from "./test.js";
 const port = 8080;
 const app = express();
 app.use(bodyParser.json());
