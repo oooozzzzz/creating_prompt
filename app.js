@@ -10,10 +10,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-	console.log(req.body);
-	const text = req.body;
-	console.log(text)
-	await api.sendMessage(762569950, text);
+	const message = JSON.parse(req.body);
+	const { senderId, results } = handleMessage(message);
+	await api.sendMessage(762569950, `Вопрос от @${senderId}\n\n${results}`);
 	res.send("200");
 });
 
