@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-	const message = JSON.parse(req.body);
+	const message = req.body;
 	const { senderId, results } = handleMessage(message);
 	await api.sendMessage(762569950, `Вопрос от @${senderId}\n\n${results}`);
 	res.send("200");
